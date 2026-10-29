@@ -48,6 +48,20 @@ FDE/
 
 ## 3. 初始化步骤
 
+0. **基础框架整理**（审计结果，2026-10-30）：
+   - pyenv hook：`~/.bashrc` 已就绪（`PYENV_ROOT` + `pyenv init -`）✅
+   - nvm hook：已就绪 ✅，但存在两处需清理：
+     - `~/.bashrc` 第 1 行硬编码 `PATH="~/.nvm/versions/node/v24.14.1/bin:..."`，
+       绕过 nvm 版本管理（安装脚本残留）；
+     - `nvm alias default` 指向 `lts/*` 但解析为 N/A（无已安装 LTS 别名可解析）。
+     处理：安装 Node 22.23.4 后执行 `nvm alias default v24.14.1`（全局默认仍为 24，
+     项目内由 `.nvmrc`+direnv 切到 22），验证新交互 shell 中 `node` 可用后，
+     删除硬编码 PATH 行。
+   - sdkman hook：已就绪 ✅（本周不用，不动）
+   - uv：`~/.local/bin` 已在 PATH，补全已加载 ✅；**不设全局 uv 配置**，
+     `UV_PYTHON_PREFERENCE=only-system` 仅放在项目 `.envrc`（项目级隔离原则）
+   - direnv：未安装、无 hook ❌ → 见步骤 3
+   - git：未配置全局 excludesFile，忽略规则全部放仓库级 `.gitignore`（见 §6）
 1. **pyenv**：`pyenv install 3.11.15`（已确认在 pyenv 候选列表中）。
    根目录与工程目录写入 `.python-version` = `3.11.15`。
 2. **nvm**：`nvm install 22.23.4`（已确认存在，满足 ≥ 22.22.0）。
@@ -95,19 +109,39 @@ pyenv 依靠 shim 机制随 `.python-version` 自动切换，无需 direnv 参�
 不执行 `verify_product.py --live` 与 Promptfoo 评估（需要用户自己的
 `FDE_MODEL_URL/KEY/NAME`，属于作业阶段动作）。
 
-## 6. `.gitignore`（仓库根）
+## 6. `.gitignore`（仓库根，按工程实际产物初始化）
+
+依据对 W01 工程的审计（`tools/product.py` 运行态路径、README/evals 的产出说明）：
 
 ```
+# Python（uv venv 与运行产物）
 .venv/
-.direnv/
-.runtime/
 __pycache__/
 *.pyc
+.pytest_cache/
+
+# direnv：缓存默认在全局 ~/.cache/direnv，仓库内无产物；
+# 此条目仅防御未来在 .envrc 中声明 direnv_layout_dir 的情况
+.direnv/
+
+# W01 产品运行态：product.py 默认 --home 为 .runtime/product/
+# （sample.sqlite、tag-system.sqlite、checkpoint、动作账本），重启保留但不入库
+.runtime/
+
+# Node（Promptfoo 经 npx 运行，正常不落地；防本地 npm install 意外入库）
 node_modules/
+
+# 模型密钥等本地环境变量文件（产品只读显式环境变量，此文件防误提交）
 .env
 ```
 
-工程工作副本本身入库（作业与证据需要版本跟踪），运行态与依赖目录不入库。
+**明确不忽略**（需入库跟踪）：
+- `projects/fde-student-w01/` 工程源码本体——作业与证据需要版本跟踪；
+- `artifacts/w01/**`（四份 JSON 证据、promptfoo-results.json）——课程作业产出，
+  工程自带 `.gitattributes`（`artifacts/** -text`）已按二进制处理，复制时保留；
+- `.python-version`、`.nvmrc`、`.envrc`——环境定义本身就是要提交的配置。
+
+后续每周新工程接入时，按其实际运行产物**增补**对应条目，不预先堆砌通用模板。
 
 ## 7. 错误处理
 
