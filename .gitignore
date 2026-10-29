@@ -1,0 +1,24 @@
+# Python（uv venv 与运行产物）
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# direnv：缓存默认在全局 ~/.cache/direnv，仓库内无产物；
+# 此条目仅防御未来在 .envrc 中声明 direnv_layout_dir 的情况
+.direnv/
+
+# W01 产品运行态：product.py 默认 --home 为 .runtime/product/
+# （sample.sqlite、tag-system.sqlite、checkpoint、动作账本），重启保留但不入库
+.runtime/
+
+# Node（Promptfoo 经 npx 运行，正常不落地；防本地 npm install 意外入库）
+node_modules/
+
+# 模型密钥等本地环境变量文件（产品只读显式环境变量，此文件防误提交）
+.env
+
+# 执行台账与 superpowers 规格/计划文档不入库（仅锚定仓库根，
+# 勿写成 docs/——那会误伤课程工程内部各级 docs/ 目录）
+.superpowers/
+/docs/
