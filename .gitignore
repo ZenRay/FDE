@@ -21,4 +21,5 @@ node_modules/
 # 执行台账与 superpowers 规格/计划文档不入库（仅锚定仓库根，
 # 勿写成 docs/——那会误伤课程工程内部各级 docs/ 目录）
 .superpowers/
-/docs/
+
+PPT/
