@@ -1,0 +1,25 @@
+{
+  "product_version": "0.2.0-w1",
+  "runtime_revision": "w01-runtime-20260922",
+  "session_id": "a9113953-2812-4e2a-a705-0e2b8dc29154",
+  "model_mode": "live",
+  "model_name": "qwen-plus-latest",
+  "prompt_sha256": "051286bc27083b1f3cd9201ebcd09030830ec3a06401197a0adaa0f1003fcddd",
+  "status": "clarification",
+  "result": {
+    "status": "clarification",
+    "summary": "请确认比较时段：2026年7月和8月对应两个自然月，需明确起止日期（结束日不包含当天）。根据业务参考日期与数据覆盖，提供以下候选方案供选择：",
+    "recommendations": [],
+    "evidence_ids": [],
+    "limitations": []
+  },
+  "observations": [],
+  "steps": 1,
+  "output_repairs": 0,
+  "usage": {
+    "prompt_tokens": 1441,
+    "completion_tokens": 68,
+    "total_tokens": 1509
+  },
+  "trace_id": "9d531105a07a35eeca82cd4bc3114198"
+}

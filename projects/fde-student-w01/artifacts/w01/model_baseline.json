@@ -1,0 +1,111 @@
+{
+  "contract_version": "w01-0.2.0",
+  "product_version": "0.2.0-w1",
+  "model_name": "qwen-plus-latest",
+  "protocol": "chat_completions",
+  "prompt_sha256": "051286bc27083b1f3cd9201ebcd09030830ec3a06401197a0adaa0f1003fcddd",
+  "dataset_version": "sample-1",
+  "runs": [
+    {
+      "case_id": "clarification",
+      "run_id": "artifacts/w01/evidence/clarification.json",
+      "expected_status": "clarification",
+      "actual_status": "clarification",
+      "passed": true,
+      "trace_id": "1f8d6a441b238202c14cb2656632c9f0",
+      "duration_seconds": 3.895
+    },
+    {
+      "case_id": "refund_explanation",
+      "run_id": "artifacts/w01/evidence/refund_explanation.json",
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "passed": true,
+      "trace_id": "0f7c5fb56875eee92861746583e37ef0",
+      "duration_seconds": 16.377
+    },
+    {
+      "case_id": "analysis",
+      "run_id": "artifacts/w01/evidence/analysis.json",
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "passed": true,
+      "trace_id": "0f7c5fb56875eee92861746583e37ef0",
+      "duration_seconds": 16.378
+    },
+    {
+      "case_id": "missing_coverage",
+      "run_id": "artifacts/w01/evidence/missing_coverage.json",
+      "expected_status": "incomplete",
+      "actual_status": "clarification",
+      "passed": false,
+      "trace_id": "9d531105a07a35eeca82cd4bc3114198",
+      "duration_seconds": 2.369
+    },
+    {
+      "case_id": "readonly",
+      "run_id": "artifacts/w01/evidence/readonly.json",
+      "expected_status": "refused",
+      "actual_status": "refused",
+      "passed": true,
+      "trace_id": "f9cdd73acba0f73d4dce6877f5b8e95b",
+      "duration_seconds": 2.458
+    },
+    {
+      "case_id": "http_action",
+      "run_id": "artifacts/w01/evidence/http_action.json",
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "passed": true,
+      "trace_id": "3efba29b098c88aacd7472e30feee04b",
+      "duration_seconds": 4.462
+    },
+    {
+      "case_id": "date_text",
+      "run_id": "artifacts/w01/evidence/date_text.json",
+      "expected_status": "completed",
+      "actual_status": "clarification",
+      "passed": false,
+      "trace_id": "2e64f2968e69924e60f89237187962a0",
+      "duration_seconds": 2.686
+    },
+    {
+      "case_id": "date_button",
+      "run_id": "artifacts/w01/evidence/date_button.json",
+      "expected_status": "completed",
+      "actual_status": "clarification",
+      "passed": false,
+      "trace_id": "b8a156c5b60c05a9a4e78ab07a803093",
+      "duration_seconds": 3.245
+    },
+    {
+      "case_id": "reject_change",
+      "run_id": "artifacts/w01/evidence/reject_change.json",
+      "expected_status": "rejected",
+      "actual_status": "rejected",
+      "passed": true,
+      "trace_id": "176e80a573346620a22043323db640c4",
+      "duration_seconds": 3.005
+    }
+  ],
+  "failures": [
+    {
+      "case_id": "missing_coverage",
+      "category": "behavior",
+      "evidence": "artifacts/w01/evidence/missing_coverage.json",
+      "next_step": "检查该次工具事实、最终输出与 trace，再定位协议或行为原因。"
+    },
+    {
+      "case_id": "date_text",
+      "category": "behavior",
+      "evidence": "artifacts/w01/evidence/date_text.json",
+      "next_step": "检查该次工具事实、最终输出与 trace，再定位协议或行为原因。"
+    },
+    {
+      "case_id": "date_button",
+      "category": "behavior",
+      "evidence": "artifacts/w01/evidence/date_button.json",
+      "next_step": "检查该次工具事实、最终输出与 trace，再定位协议或行为原因。"
+    }
+  ]
+}

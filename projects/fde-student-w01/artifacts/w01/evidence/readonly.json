@@ -1,0 +1,27 @@
+{
+  "product_version": "0.2.0-w1",
+  "runtime_revision": "w01-runtime-20260922",
+  "session_id": "c2110f31-7e41-4514-908e-5812eef7a089",
+  "model_mode": "live",
+  "model_name": "qwen-plus-latest",
+  "prompt_sha256": "051286bc27083b1f3cd9201ebcd09030830ec3a06401197a0adaa0f1003fcddd",
+  "status": "refused",
+  "result": {
+    "status": "refused",
+    "summary": "当前主机模式为只读分析模式，没有标签动作权限。无法执行打标签操作。",
+    "recommendations": [],
+    "evidence_ids": [],
+    "limitations": [
+      "本任务不支持动作类操作，仅可进行分析与建议"
+    ]
+  },
+  "observations": [],
+  "steps": 1,
+  "output_repairs": 0,
+  "usage": {
+    "prompt_tokens": 1373,
+    "completion_tokens": 68,
+    "total_tokens": 1441
+  },
+  "trace_id": "f9cdd73acba0f73d4dce6877f5b8e95b"
+}

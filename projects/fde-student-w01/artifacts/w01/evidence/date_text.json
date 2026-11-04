@@ -1,0 +1,58 @@
+{
+  "product_version": "0.2.0-w1",
+  "runtime_revision": "w01-runtime-20260922",
+  "session_id": "64f68821-a67d-4489-8d69-039a20fd45d0",
+  "model_mode": "live",
+  "model_name": "qwen-plus-latest",
+  "prompt_sha256": "051286bc27083b1f3cd9201ebcd09030830ec3a06401197a0adaa0f1003fcddd",
+  "status": "clarification",
+  "result": {
+    "status": "clarification",
+    "summary": "请确认用于比较的两个时段。业务参考日期为 2024-06-15，数据覆盖全部门店。以下为符合数据覆盖与业务规则的 3 个候选时间范围（每个时段均为闭区间左包含、右不包含）：",
+    "recommendations": [],
+    "evidence_ids": [],
+    "limitations": []
+  },
+  "observations": [],
+  "steps": 1,
+  "output_repairs": 0,
+  "usage": {
+    "prompt_tokens": 1363,
+    "completion_tokens": 80,
+    "total_tokens": 1443
+  },
+  "trace_id": "2e64f2968e69924e60f89237187962a0",
+  "scenario": "date_text",
+  "scenario_passed": false,
+  "checks": {
+    "clarification_with_options": false
+  },
+  "rounds": [
+    {
+      "product_version": "0.2.0-w1",
+      "runtime_revision": "w01-runtime-20260922",
+      "session_id": "64f68821-a67d-4489-8d69-039a20fd45d0",
+      "model_mode": "live",
+      "model_name": "qwen-plus-latest",
+      "prompt_sha256": "051286bc27083b1f3cd9201ebcd09030830ec3a06401197a0adaa0f1003fcddd",
+      "status": "clarification",
+      "result": {
+        "status": "clarification",
+        "summary": "请确认用于比较的两个时段。业务参考日期为 2024-06-15，数据覆盖全部门店。以下为符合数据覆盖与业务规则的 3 个候选时间范围（每个时段均为闭区间左包含、右不包含）：",
+        "recommendations": [],
+        "evidence_ids": [],
+        "limitations": []
+      },
+      "observations": [],
+      "steps": 1,
+      "output_repairs": 0,
+      "usage": {
+        "prompt_tokens": 1363,
+        "completion_tokens": 80,
+        "total_tokens": 1443
+      },
+      "trace_id": "2e64f2968e69924e60f89237187962a0"
+    }
+  ],
+  "model_calls": 1
+}

@@ -1,0 +1,25 @@
+{
+  "product_version": "0.2.0-w1",
+  "runtime_revision": "w01-runtime-20260922",
+  "session_id": "327054a3-085d-4418-8a3f-56fcf4744758",
+  "model_mode": "live",
+  "model_name": "qwen-plus-latest",
+  "prompt_sha256": "051286bc27083b1f3cd9201ebcd09030830ec3a06401197a0adaa0f1003fcddd",
+  "status": "clarification",
+  "result": {
+    "status": "clarification",
+    "summary": "请确认用于比较的两个时段。当前业务参考日期为 2024-05-31，数据覆盖全部门店。以下为符合数据覆盖和业务口径的 3 个候选时间范围（均为 ISO 格式，结束日不包含当天，且两时段不重叠）：",
+    "recommendations": [],
+    "evidence_ids": [],
+    "limitations": []
+  },
+  "observations": [],
+  "steps": 1,
+  "output_repairs": 0,
+  "usage": {
+    "prompt_tokens": 1363,
+    "completion_tokens": 88,
+    "total_tokens": 1451
+  },
+  "trace_id": "1f8d6a441b238202c14cb2656632c9f0"
+}
