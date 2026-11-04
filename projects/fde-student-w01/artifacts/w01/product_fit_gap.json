@@ -1,0 +1,54 @@
+{
+  "contract_version": "w01-0.2.1",
+  "product_version": "0.2.0-w1",
+  "capability_matrix_version": "w1-capabilities-0.2.0",
+  "items": [
+    {
+      "id": "GAP-001",
+      "request": "识别重点会员: 沈总希望能够从80万活跃会员中能够找到相应的分组，进行重点运营",
+      "category": "系统适配",
+      "capability_ids": [
+        "CAP-003",
+        "CAP-004",
+        "CAP-006"
+      ],
+      "evidence_status": "reported",
+      "evidence": [],
+      "next_step": "从真实数据中确认口径以及确认会员类型后判断"
+    },
+    {
+      "id": "GAP-002",
+      "request": "整合现有小林的运营工作，给到相关的运营结果数据",
+      "category": "待判断",
+      "capability_ids": [
+        "CAP-003"
+      ],
+      "evidence_status": "reported",
+      "evidence": [],
+      "next_step": "进行相关人员访谈，确认当前流程、依据"
+    },
+    {
+      "id": "GAP-003",
+      "request": "三个月是我个人希望看到效果的时间，目标是能够解决复购率止跌回升",
+      "category": "暂不承诺",
+      "capability_ids": [
+        "CAP-006"
+      ],
+      "evidence_status": "reported",
+      "evidence": [],
+      "next_step": "待完整执行所有流程"
+    },
+    {
+      "id": "GAP-004",
+      "request": "数据接入以及标准化结果",
+      "category": "系统适配",
+      "capability_ids": [
+        "CAP-004",
+        "CAP-006"
+      ],
+      "evidence_status": "unknown",
+      "evidence": [],
+      "next_step": "数据接入沟通确认以及接入可能性验证"
+    }
+  ]
+}

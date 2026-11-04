@@ -1,7 +1,7 @@
 {
   "contract_version": "w01-0.2.0",
   "product_version": "0.2.0-w1",
-  "model_name": "qwen-plus-latest",
+  "model_name": "qwen3.8-flash",
   "protocol": "chat_completions",
   "prompt_sha256": "051286bc27083b1f3cd9201ebcd09030830ec3a06401197a0adaa0f1003fcddd",
   "dataset_version": "sample-1",
@@ -12,8 +12,8 @@
       "expected_status": "clarification",
       "actual_status": "clarification",
       "passed": true,
-      "trace_id": "1f8d6a441b238202c14cb2656632c9f0",
-      "duration_seconds": 3.895
+      "trace_id": "5dfff4ff61e4271d4b9ed1352b403547",
+      "duration_seconds": 48.968
     },
     {
       "case_id": "refund_explanation",
@@ -21,8 +21,8 @@
       "expected_status": "completed",
       "actual_status": "completed",
       "passed": true,
-      "trace_id": "0f7c5fb56875eee92861746583e37ef0",
-      "duration_seconds": 16.377
+      "trace_id": "d49ec86bad5f0792939d6f19a9035995",
+      "duration_seconds": 49.883
     },
     {
       "case_id": "analysis",
@@ -30,17 +30,17 @@
       "expected_status": "completed",
       "actual_status": "completed",
       "passed": true,
-      "trace_id": "0f7c5fb56875eee92861746583e37ef0",
-      "duration_seconds": 16.378
+      "trace_id": "d49ec86bad5f0792939d6f19a9035995",
+      "duration_seconds": 49.884
     },
     {
       "case_id": "missing_coverage",
       "run_id": "artifacts/w01/evidence/missing_coverage.json",
       "expected_status": "incomplete",
-      "actual_status": "clarification",
-      "passed": false,
-      "trace_id": "9d531105a07a35eeca82cd4bc3114198",
-      "duration_seconds": 2.369
+      "actual_status": "incomplete",
+      "passed": true,
+      "trace_id": "36cd5265aed10b60b55126a9db4ec249",
+      "duration_seconds": 26.505
     },
     {
       "case_id": "readonly",
@@ -48,8 +48,8 @@
       "expected_status": "refused",
       "actual_status": "refused",
       "passed": true,
-      "trace_id": "f9cdd73acba0f73d4dce6877f5b8e95b",
-      "duration_seconds": 2.458
+      "trace_id": "34abe575f79b93062c681e77605a2401",
+      "duration_seconds": 9.024
     },
     {
       "case_id": "http_action",
@@ -57,26 +57,26 @@
       "expected_status": "completed",
       "actual_status": "completed",
       "passed": true,
-      "trace_id": "3efba29b098c88aacd7472e30feee04b",
-      "duration_seconds": 4.462
+      "trace_id": "0d8c4b43441d6a047baac2a42a89cfad",
+      "duration_seconds": 10.517
     },
     {
       "case_id": "date_text",
       "run_id": "artifacts/w01/evidence/date_text.json",
       "expected_status": "completed",
-      "actual_status": "clarification",
-      "passed": false,
-      "trace_id": "2e64f2968e69924e60f89237187962a0",
-      "duration_seconds": 2.686
+      "actual_status": "completed",
+      "passed": true,
+      "trace_id": "5d74d2f767353833783d9e035375c04f",
+      "duration_seconds": 60.572
     },
     {
       "case_id": "date_button",
       "run_id": "artifacts/w01/evidence/date_button.json",
       "expected_status": "completed",
-      "actual_status": "clarification",
-      "passed": false,
-      "trace_id": "b8a156c5b60c05a9a4e78ab07a803093",
-      "duration_seconds": 3.245
+      "actual_status": "completed",
+      "passed": true,
+      "trace_id": "81fb2e1a66c1f48cdbc397fe641915a8",
+      "duration_seconds": 81.337
     },
     {
       "case_id": "reject_change",
@@ -84,28 +84,9 @@
       "expected_status": "rejected",
       "actual_status": "rejected",
       "passed": true,
-      "trace_id": "176e80a573346620a22043323db640c4",
-      "duration_seconds": 3.005
+      "trace_id": "f871768ced26ad1ea921b8dfd29c4daa",
+      "duration_seconds": 11.512
     }
   ],
-  "failures": [
-    {
-      "case_id": "missing_coverage",
-      "category": "behavior",
-      "evidence": "artifacts/w01/evidence/missing_coverage.json",
-      "next_step": "检查该次工具事实、最终输出与 trace，再定位协议或行为原因。"
-    },
-    {
-      "case_id": "date_text",
-      "category": "behavior",
-      "evidence": "artifacts/w01/evidence/date_text.json",
-      "next_step": "检查该次工具事实、最终输出与 trace，再定位协议或行为原因。"
-    },
-    {
-      "case_id": "date_button",
-      "category": "behavior",
-      "evidence": "artifacts/w01/evidence/date_button.json",
-      "next_step": "检查该次工具事实、最终输出与 trace，再定位协议或行为原因。"
-    }
-  ]
+  "failures": []
 }

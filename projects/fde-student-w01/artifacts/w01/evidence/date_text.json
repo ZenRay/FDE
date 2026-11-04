@@ -1,58 +1,1651 @@
 {
   "product_version": "0.2.0-w1",
   "runtime_revision": "w01-runtime-20260922",
-  "session_id": "64f68821-a67d-4489-8d69-039a20fd45d0",
+  "session_id": "8ee02ada-7226-4347-a393-7aff8e89a82b",
   "model_mode": "live",
-  "model_name": "qwen-plus-latest",
+  "model_name": "qwen3.8-flash",
   "prompt_sha256": "051286bc27083b1f3cd9201ebcd09030830ec3a06401197a0adaa0f1003fcddd",
-  "status": "clarification",
+  "status": "completed",
   "result": {
-    "status": "clarification",
-    "summary": "请确认用于比较的两个时段。业务参考日期为 2024-06-15，数据覆盖全部门店。以下为符合数据覆盖与业务规则的 3 个候选时间范围（每个时段均为闭区间左包含、右不包含）：",
-    "recommendations": [],
-    "evidence_ids": [],
-    "limitations": []
+    "status": "completed",
+    "summary": "基准 2026-07-01 至 2026-08-01，比较 2026-08-01 至 2026-09-01，下降阈值 20%；基准 2026-07-01 至 2026-08-01，比较 2026-08-01 至 2026-09-01，下降阈值 20%；基准 2026-07-01 至 2026-08-01，比较 2026-08-01 至 2026-09-01，下降阈值 20%（均不含结束日）。本轮比较识别到 3 位达到下降阈值的老会员。门店 S03 缺少所选时段数据，未计入判断，不能按零消费处理。",
+    "recommendations": [
+      {
+        "member_id": "M001",
+        "suggestion": "优先安排门店客服做一次一对一回访与品类偏好确认，再按偏好推荐会员专属权益或体验装；建议在触达前先由运营人工核对订单明细中的退款与取消记录。",
+        "rationale": "基准时段 2026-07-01 至 2026-08-01，比较时段 2026-08-01 至 2026-09-01（均不含结束日）。净消费从 1000 元变为 400 元，下降 60%。基准时段有 1 笔已支付订单，支付 1000 元，退款 0 元，净消费 1000 元。比较时段有 2 笔已支付订单（其中 1 笔全额退款，已包含在已支付笔数内），支付 500 元，退款 100 元，净消费 400 元；另有 1 笔取消订单未计入。\n基准时段 2026-07-01 至 2026-08-01，比较时段 2026-08-01 至 2026-09-01（均不含结束日）。净消费从 1000 元变为 400 元，下降 60%。基准时段有 1 笔已支付订单，支付 1000 元，退款 0 元，净消费 1000 元。比较时段有 2 笔已支付订单（其中 1 笔全额退款，已包含在已支付笔数内），支付 500 元，退款 100 元，净消费 400 元；另有 1 笔取消订单未计入。"
+      },
+      {
+        "member_id": "M004",
+        "suggestion": "列入高优先人工回访名单，由 S01 门店客服以老会员关怀方式了解近期需求变化，并提醒可用的常规会员权益；如需形成运营名单，须先走受控确认流程。",
+        "rationale": "基准时段 2026-07-01 至 2026-08-01，比较时段 2026-08-01 至 2026-09-01（均不含结束日）。净消费从 400 元变为 0 元，下降 100%。基准时段有 1 笔已支付订单，支付 400 元，退款 0 元，净消费 400 元。比较时段没有已支付订单，净消费为 0 元。\n基准时段 2026-07-01 至 2026-08-01，比较时段 2026-08-01 至 2026-09-01（均不含结束日）。净消费从 400 元变为 0 元，下降 100%。基准时段有 1 笔已支付订单，支付 400 元，退款 0 元，净消费 400 元。比较时段没有已支付订单，净消费为 0 元。"
+      },
+      {
+        "member_id": "M007",
+        "suggestion": "采用低成本触达方式（如新品或到店活动信息提醒），观察是否恢复互动后再决定是否升级为人工回访；不建议一次性投入高成本权益。",
+        "rationale": "基准时段 2026-07-01 至 2026-08-01，比较时段 2026-08-01 至 2026-09-01（均不含结束日）。净消费从 100 元变为 0 元，下降 100%。基准时段有 1 笔已支付订单，支付 100 元，退款 0 元，净消费 100 元。比较时段没有已支付订单，净消费为 0 元。\n基准时段 2026-07-01 至 2026-08-01，比较时段 2026-08-01 至 2026-09-01（均不含结束日）。净消费从 100 元变为 0 元，下降 100%。基准时段有 1 笔已支付订单，支付 100 元，退款 0 元，净消费 100 元。比较时段没有已支付订单，净消费为 0 元。"
+      }
+    ],
+    "evidence_ids": [
+      "CMP-29dcd590e6429c3a",
+      "CMP-30cd499c230992b1",
+      "CMP-9e4017002e9ab53b"
+    ],
+    "limitations": [
+      "未覆盖门店的消费未知，不能计为零。",
+      "召回建议由模型生成，消费下降原因及具体触达方案仍需业务人员核实。"
+    ]
   },
-  "observations": [],
-  "steps": 1,
+  "observations": [
+    {
+      "name": "compare_spending",
+      "result": {
+        "status": "partial",
+        "evidence_id": "CMP-29dcd590e6429c3a",
+        "dataset_version": "sample-1",
+        "metric_id": "sample.net_spend.v1",
+        "windows": {
+          "baseline": [
+            "2026-07-01",
+            "2026-08-01"
+          ],
+          "current": [
+            "2026-08-01",
+            "2026-09-01"
+          ],
+          "end_exclusive": true
+        },
+        "minimum_decline_pct": 20,
+        "rows": [
+          {
+            "member_id": "M001",
+            "store_id": "S01",
+            "baseline_cents": 100000,
+            "current_cents": 40000,
+            "delta_cents": -60000,
+            "decline_pct": 60.0,
+            "baseline_orders": 1,
+            "current_orders": 2,
+            "declining": true,
+            "evidence_order_ids": [
+              [
+                "O0010"
+              ],
+              [
+                "O0011",
+                "OREF"
+              ]
+            ],
+            "order_breakdown": {
+              "baseline": {
+                "paid_count": 1,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 100000,
+                "refunded_cents": 0,
+                "net_cents": 100000,
+                "paid_order_ids": [
+                  "O0010"
+                ],
+                "cancelled_order_ids": []
+              },
+              "current": {
+                "paid_count": 2,
+                "fully_refunded_count": 1,
+                "cancelled_count": 1,
+                "paid_cents": 50000,
+                "refunded_cents": 10000,
+                "net_cents": 40000,
+                "paid_order_ids": [
+                  "O0011",
+                  "OREF"
+                ],
+                "cancelled_order_ids": [
+                  "OCANCEL"
+                ]
+              }
+            }
+          },
+          {
+            "member_id": "M002",
+            "store_id": "S01",
+            "baseline_cents": 80000,
+            "current_cents": 80000,
+            "delta_cents": 0,
+            "decline_pct": 0.0,
+            "baseline_orders": 1,
+            "current_orders": 1,
+            "declining": false,
+            "evidence_order_ids": [
+              [
+                "O0020"
+              ],
+              [
+                "O0021"
+              ]
+            ],
+            "order_breakdown": {
+              "baseline": {
+                "paid_count": 1,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 80000,
+                "refunded_cents": 0,
+                "net_cents": 80000,
+                "paid_order_ids": [
+                  "O0020"
+                ],
+                "cancelled_order_ids": []
+              },
+              "current": {
+                "paid_count": 1,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 80000,
+                "refunded_cents": 0,
+                "net_cents": 80000,
+                "paid_order_ids": [
+                  "O0021"
+                ],
+                "cancelled_order_ids": []
+              }
+            }
+          },
+          {
+            "member_id": "M003",
+            "store_id": "S01",
+            "baseline_cents": 50000,
+            "current_cents": 90000,
+            "delta_cents": 40000,
+            "decline_pct": -80.0,
+            "baseline_orders": 1,
+            "current_orders": 1,
+            "declining": false,
+            "evidence_order_ids": [
+              [
+                "O0030"
+              ],
+              [
+                "O0031"
+              ]
+            ],
+            "order_breakdown": {
+              "baseline": {
+                "paid_count": 1,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 50000,
+                "refunded_cents": 0,
+                "net_cents": 50000,
+                "paid_order_ids": [
+                  "O0030"
+                ],
+                "cancelled_order_ids": []
+              },
+              "current": {
+                "paid_count": 1,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 90000,
+                "refunded_cents": 0,
+                "net_cents": 90000,
+                "paid_order_ids": [
+                  "O0031"
+                ],
+                "cancelled_order_ids": []
+              }
+            }
+          },
+          {
+            "member_id": "M004",
+            "store_id": "S01",
+            "baseline_cents": 40000,
+            "current_cents": 0,
+            "delta_cents": -40000,
+            "decline_pct": 100.0,
+            "baseline_orders": 1,
+            "current_orders": 0,
+            "declining": true,
+            "evidence_order_ids": [
+              [
+                "O0040"
+              ],
+              []
+            ],
+            "order_breakdown": {
+              "baseline": {
+                "paid_count": 1,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 40000,
+                "refunded_cents": 0,
+                "net_cents": 40000,
+                "paid_order_ids": [
+                  "O0040"
+                ],
+                "cancelled_order_ids": []
+              },
+              "current": {
+                "paid_count": 0,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 0,
+                "refunded_cents": 0,
+                "net_cents": 0,
+                "paid_order_ids": [],
+                "cancelled_order_ids": []
+              }
+            }
+          },
+          {
+            "member_id": "M005",
+            "store_id": "S02",
+            "baseline_cents": 0,
+            "current_cents": 0,
+            "delta_cents": 0,
+            "decline_pct": null,
+            "baseline_orders": 0,
+            "current_orders": 0,
+            "declining": false,
+            "evidence_order_ids": [
+              [],
+              []
+            ],
+            "order_breakdown": {
+              "baseline": {
+                "paid_count": 0,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 0,
+                "refunded_cents": 0,
+                "net_cents": 0,
+                "paid_order_ids": [],
+                "cancelled_order_ids": []
+              },
+              "current": {
+                "paid_count": 0,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 0,
+                "refunded_cents": 0,
+                "net_cents": 0,
+                "paid_order_ids": [],
+                "cancelled_order_ids": []
+              }
+            }
+          },
+          {
+            "member_id": "M007",
+            "store_id": "S02",
+            "baseline_cents": 10000,
+            "current_cents": 0,
+            "delta_cents": -10000,
+            "decline_pct": 100.0,
+            "baseline_orders": 1,
+            "current_orders": 0,
+            "declining": true,
+            "evidence_order_ids": [
+              [
+                "O0070"
+              ],
+              []
+            ],
+            "order_breakdown": {
+              "baseline": {
+                "paid_count": 1,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 10000,
+                "refunded_cents": 0,
+                "net_cents": 10000,
+                "paid_order_ids": [
+                  "O0070"
+                ],
+                "cancelled_order_ids": []
+              },
+              "current": {
+                "paid_count": 0,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 0,
+                "refunded_cents": 0,
+                "net_cents": 0,
+                "paid_order_ids": [],
+                "cancelled_order_ids": []
+              }
+            }
+          }
+        ],
+        "declining_members": [
+          "M001",
+          "M004",
+          "M007"
+        ],
+        "missing_coverage_stores": [
+          "S03"
+        ],
+        "limitations": [
+          "未覆盖门店的消费未知，不能计为零。"
+        ],
+        "business_reference_date": "2026-09-01"
+      },
+      "call_id": "call_684fa4c232fe484db50a807f"
+    },
+    {
+      "name": "compare_spending",
+      "result": {
+        "status": "ok",
+        "evidence_id": "CMP-30cd499c230992b1",
+        "dataset_version": "sample-1",
+        "metric_id": "sample.net_spend.v1",
+        "windows": {
+          "baseline": [
+            "2026-07-01",
+            "2026-08-01"
+          ],
+          "current": [
+            "2026-08-01",
+            "2026-09-01"
+          ],
+          "end_exclusive": true
+        },
+        "minimum_decline_pct": 20,
+        "rows": [
+          {
+            "member_id": "M001",
+            "store_id": "S01",
+            "baseline_cents": 100000,
+            "current_cents": 40000,
+            "delta_cents": -60000,
+            "decline_pct": 60.0,
+            "baseline_orders": 1,
+            "current_orders": 2,
+            "declining": true,
+            "evidence_order_ids": [
+              [
+                "O0010"
+              ],
+              [
+                "O0011",
+                "OREF"
+              ]
+            ],
+            "order_breakdown": {
+              "baseline": {
+                "paid_count": 1,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 100000,
+                "refunded_cents": 0,
+                "net_cents": 100000,
+                "paid_order_ids": [
+                  "O0010"
+                ],
+                "cancelled_order_ids": []
+              },
+              "current": {
+                "paid_count": 2,
+                "fully_refunded_count": 1,
+                "cancelled_count": 1,
+                "paid_cents": 50000,
+                "refunded_cents": 10000,
+                "net_cents": 40000,
+                "paid_order_ids": [
+                  "O0011",
+                  "OREF"
+                ],
+                "cancelled_order_ids": [
+                  "OCANCEL"
+                ]
+              }
+            }
+          },
+          {
+            "member_id": "M002",
+            "store_id": "S01",
+            "baseline_cents": 80000,
+            "current_cents": 80000,
+            "delta_cents": 0,
+            "decline_pct": 0.0,
+            "baseline_orders": 1,
+            "current_orders": 1,
+            "declining": false,
+            "evidence_order_ids": [
+              [
+                "O0020"
+              ],
+              [
+                "O0021"
+              ]
+            ],
+            "order_breakdown": {
+              "baseline": {
+                "paid_count": 1,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 80000,
+                "refunded_cents": 0,
+                "net_cents": 80000,
+                "paid_order_ids": [
+                  "O0020"
+                ],
+                "cancelled_order_ids": []
+              },
+              "current": {
+                "paid_count": 1,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 80000,
+                "refunded_cents": 0,
+                "net_cents": 80000,
+                "paid_order_ids": [
+                  "O0021"
+                ],
+                "cancelled_order_ids": []
+              }
+            }
+          },
+          {
+            "member_id": "M003",
+            "store_id": "S01",
+            "baseline_cents": 50000,
+            "current_cents": 90000,
+            "delta_cents": 40000,
+            "decline_pct": -80.0,
+            "baseline_orders": 1,
+            "current_orders": 1,
+            "declining": false,
+            "evidence_order_ids": [
+              [
+                "O0030"
+              ],
+              [
+                "O0031"
+              ]
+            ],
+            "order_breakdown": {
+              "baseline": {
+                "paid_count": 1,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 50000,
+                "refunded_cents": 0,
+                "net_cents": 50000,
+                "paid_order_ids": [
+                  "O0030"
+                ],
+                "cancelled_order_ids": []
+              },
+              "current": {
+                "paid_count": 1,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 90000,
+                "refunded_cents": 0,
+                "net_cents": 90000,
+                "paid_order_ids": [
+                  "O0031"
+                ],
+                "cancelled_order_ids": []
+              }
+            }
+          },
+          {
+            "member_id": "M004",
+            "store_id": "S01",
+            "baseline_cents": 40000,
+            "current_cents": 0,
+            "delta_cents": -40000,
+            "decline_pct": 100.0,
+            "baseline_orders": 1,
+            "current_orders": 0,
+            "declining": true,
+            "evidence_order_ids": [
+              [
+                "O0040"
+              ],
+              []
+            ],
+            "order_breakdown": {
+              "baseline": {
+                "paid_count": 1,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 40000,
+                "refunded_cents": 0,
+                "net_cents": 40000,
+                "paid_order_ids": [
+                  "O0040"
+                ],
+                "cancelled_order_ids": []
+              },
+              "current": {
+                "paid_count": 0,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 0,
+                "refunded_cents": 0,
+                "net_cents": 0,
+                "paid_order_ids": [],
+                "cancelled_order_ids": []
+              }
+            }
+          }
+        ],
+        "declining_members": [
+          "M001",
+          "M004"
+        ],
+        "missing_coverage_stores": [],
+        "limitations": [],
+        "business_reference_date": "2026-09-01"
+      },
+      "call_id": "call_ce04e2531f9347dd8fcd92df"
+    },
+    {
+      "name": "compare_spending",
+      "result": {
+        "status": "ok",
+        "evidence_id": "CMP-9e4017002e9ab53b",
+        "dataset_version": "sample-1",
+        "metric_id": "sample.net_spend.v1",
+        "windows": {
+          "baseline": [
+            "2026-07-01",
+            "2026-08-01"
+          ],
+          "current": [
+            "2026-08-01",
+            "2026-09-01"
+          ],
+          "end_exclusive": true
+        },
+        "minimum_decline_pct": 20,
+        "rows": [
+          {
+            "member_id": "M005",
+            "store_id": "S02",
+            "baseline_cents": 0,
+            "current_cents": 0,
+            "delta_cents": 0,
+            "decline_pct": null,
+            "baseline_orders": 0,
+            "current_orders": 0,
+            "declining": false,
+            "evidence_order_ids": [
+              [],
+              []
+            ],
+            "order_breakdown": {
+              "baseline": {
+                "paid_count": 0,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 0,
+                "refunded_cents": 0,
+                "net_cents": 0,
+                "paid_order_ids": [],
+                "cancelled_order_ids": []
+              },
+              "current": {
+                "paid_count": 0,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 0,
+                "refunded_cents": 0,
+                "net_cents": 0,
+                "paid_order_ids": [],
+                "cancelled_order_ids": []
+              }
+            }
+          },
+          {
+            "member_id": "M007",
+            "store_id": "S02",
+            "baseline_cents": 10000,
+            "current_cents": 0,
+            "delta_cents": -10000,
+            "decline_pct": 100.0,
+            "baseline_orders": 1,
+            "current_orders": 0,
+            "declining": true,
+            "evidence_order_ids": [
+              [
+                "O0070"
+              ],
+              []
+            ],
+            "order_breakdown": {
+              "baseline": {
+                "paid_count": 1,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 10000,
+                "refunded_cents": 0,
+                "net_cents": 10000,
+                "paid_order_ids": [
+                  "O0070"
+                ],
+                "cancelled_order_ids": []
+              },
+              "current": {
+                "paid_count": 0,
+                "fully_refunded_count": 0,
+                "cancelled_count": 0,
+                "paid_cents": 0,
+                "refunded_cents": 0,
+                "net_cents": 0,
+                "paid_order_ids": [],
+                "cancelled_order_ids": []
+              }
+            }
+          }
+        ],
+        "declining_members": [
+          "M007"
+        ],
+        "missing_coverage_stores": [],
+        "limitations": [],
+        "business_reference_date": "2026-09-01"
+      },
+      "call_id": "call_3a25a5a27fac44beb1a4a56a"
+    },
+    {
+      "name": "member_history",
+      "result": {
+        "status": "ok",
+        "member": {
+          "member_id": "M001",
+          "store_id": "S01",
+          "joined_at": "2025-01-01"
+        },
+        "orders": [
+          {
+            "order_id": "O0010",
+            "paid_at": "2026-07-10",
+            "paid_cents": 100000,
+            "refunded_cents": 0,
+            "status": "paid"
+          },
+          {
+            "order_id": "O0011",
+            "paid_at": "2026-08-10",
+            "paid_cents": 40000,
+            "refunded_cents": 0,
+            "status": "paid"
+          },
+          {
+            "order_id": "OREF",
+            "paid_at": "2026-08-12",
+            "paid_cents": 10000,
+            "refunded_cents": 10000,
+            "status": "paid"
+          },
+          {
+            "order_id": "OCANCEL",
+            "paid_at": "2026-08-13",
+            "paid_cents": 99900,
+            "refunded_cents": 0,
+            "status": "cancelled"
+          }
+        ]
+      },
+      "call_id": "call_6d37344641944a26907051aa"
+    },
+    {
+      "name": "member_history",
+      "result": {
+        "status": "ok",
+        "member": {
+          "member_id": "M004",
+          "store_id": "S01",
+          "joined_at": "2025-01-01"
+        },
+        "orders": [
+          {
+            "order_id": "O0040",
+            "paid_at": "2026-07-10",
+            "paid_cents": 40000,
+            "refunded_cents": 0,
+            "status": "paid"
+          }
+        ]
+      },
+      "call_id": "call_96af3df2dac844a28934835e"
+    },
+    {
+      "name": "member_history",
+      "result": {
+        "status": "ok",
+        "member": {
+          "member_id": "M007",
+          "store_id": "S02",
+          "joined_at": "2025-01-01"
+        },
+        "orders": [
+          {
+            "order_id": "O0070",
+            "paid_at": "2026-07-10",
+            "paid_cents": 10000,
+            "refunded_cents": 0,
+            "status": "paid"
+          }
+        ]
+      },
+      "call_id": "call_803962c7f16d44d982200148"
+    }
+  ],
+  "steps": 3,
   "output_repairs": 0,
   "usage": {
-    "prompt_tokens": 1363,
-    "completion_tokens": 80,
-    "total_tokens": 1443
+    "prompt_tokens": 21336,
+    "completion_tokens": 3215,
+    "total_tokens": 24551
   },
-  "trace_id": "2e64f2968e69924e60f89237187962a0",
+  "trace_id": "5d74d2f767353833783d9e035375c04f",
   "scenario": "date_text",
-  "scenario_passed": false,
+  "scenario_passed": true,
   "checks": {
-    "clarification_with_options": false
+    "clarification_with_options": true,
+    "selected_windows_queried": true,
+    "analysis_completed": true,
+    "threshold_preserved": true
   },
   "rounds": [
     {
       "product_version": "0.2.0-w1",
       "runtime_revision": "w01-runtime-20260922",
-      "session_id": "64f68821-a67d-4489-8d69-039a20fd45d0",
+      "session_id": "8ee02ada-7226-4347-a393-7aff8e89a82b",
       "model_mode": "live",
-      "model_name": "qwen-plus-latest",
+      "model_name": "qwen3.8-flash",
       "prompt_sha256": "051286bc27083b1f3cd9201ebcd09030830ec3a06401197a0adaa0f1003fcddd",
       "status": "clarification",
       "result": {
         "status": "clarification",
-        "summary": "请确认用于比较的两个时段。业务参考日期为 2024-06-15，数据覆盖全部门店。以下为符合数据覆盖与业务规则的 3 个候选时间范围（每个时段均为闭区间左包含、右不包含）：",
+        "summary": "请确认比较时段。可点击下面的日期方案，或回复“按第一个方案”等；也可直接输入带年份的两个完整月份。",
         "recommendations": [],
         "evidence_ids": [],
-        "limitations": []
+        "clarification": {
+          "question": "请选择用于比较的基期与近期时段（结束日期不含当天）",
+          "time_options": [
+            {
+              "baseline": [
+                "2026-07-01",
+                "2026-08-01"
+              ],
+              "current": [
+                "2026-08-01",
+                "2026-09-01"
+              ]
+            },
+            {
+              "baseline": [
+                "2026-07-01",
+                "2026-07-16"
+              ],
+              "current": [
+                "2026-07-16",
+                "2026-08-01"
+              ]
+            },
+            {
+              "baseline": [
+                "2026-07-01",
+                "2026-08-01"
+              ],
+              "current": [
+                "2026-08-01",
+                "2026-09-01"
+              ]
+            }
+          ],
+          "notes": [
+            "方案一/三：自然月对比，需限定门店 S01、S02，S03 的 8 月属于未知而非零消费",
+            "方案二：7 月上半月 vs 下半月，全部门店（含 S03）均有覆盖"
+          ]
+        }
       },
-      "observations": [],
-      "steps": 1,
+      "observations": [
+        {
+          "name": "describe_business",
+          "result": {
+            "status": "ok",
+            "semantics": {
+              "version": "sample-semantics-1",
+              "company": "松果生活（独立虚构样例）",
+              "objects": [
+                "Member",
+                "Order",
+                "Store",
+                "Tag"
+              ],
+              "links": [
+                "Member belongs_to Store",
+                "Order belongs_to Member"
+              ],
+              "spend": {
+                "id": "sample.net_spend.v1",
+                "aggregation": "paid_minus_refunded_cents",
+                "unit": "CNY cents",
+                "include": "status=paid",
+                "window": "start inclusive, end exclusive"
+              },
+              "old_member": {
+                "basis": "joined_before_baseline"
+              },
+              "decline": {
+                "minimum_pct": 20,
+                "formula": "(baseline-current)/baseline*100",
+                "zero_baseline": "undefined; excluded from decline cohort"
+              },
+              "recommendation_constraints": [
+                "只提出可供运营人员审核的建议，不承诺召回效果",
+                "未获得确认不执行标签动作",
+                "不声称已经发券",
+                "引用工具 evidence_id，金额只能来自工具结果"
+              ]
+            },
+            "dataset": {
+              "dataset_version": "sample-1",
+              "business_reference_date": "2026-09-01",
+              "fictional": true,
+              "company": "松果生活",
+              "description": "独立于青禾。2026 年 7 月与 8 月；S03 的 8 月没有数据覆盖，不可当作消费为零。"
+            },
+            "coverage": [
+              {
+                "store_id": "S01",
+                "start": "2026-07-01",
+                "end": "2026-09-01"
+              },
+              {
+                "store_id": "S02",
+                "start": "2026-07-01",
+                "end": "2026-09-01"
+              },
+              {
+                "store_id": "S03",
+                "start": "2026-07-01",
+                "end": "2026-08-01"
+              }
+            ],
+            "required": "必须由用户明确或确认两个时段，不能擅自用默认日期替代澄清。"
+          },
+          "call_id": "call_86abc83a28344e1b9ea00cb8"
+        }
+      ],
+      "steps": 2,
       "output_repairs": 0,
       "usage": {
-        "prompt_tokens": 1363,
-        "completion_tokens": 80,
-        "total_tokens": 1443
+        "prompt_tokens": 3449,
+        "completion_tokens": 854,
+        "total_tokens": 4303
       },
-      "trace_id": "2e64f2968e69924e60f89237187962a0"
+      "trace_id": "06db775ac3cf5a18efbded641a4822b3",
+      "time_options": [
+        {
+          "id": "T1",
+          "windows": [
+            [
+              "2026-07-01",
+              "2026-08-01"
+            ],
+            [
+              "2026-08-01",
+              "2026-09-01"
+            ]
+          ],
+          "label": "基准 2026-07-01 至 2026-08-01；比较 2026-08-01 至 2026-09-01（均不含结束日）"
+        }
+      ],
+      "time_options_token": "c240e08d6edf4a0181783d183c8b2fab"
+    },
+    {
+      "product_version": "0.2.0-w1",
+      "runtime_revision": "w01-runtime-20260922",
+      "session_id": "8ee02ada-7226-4347-a393-7aff8e89a82b",
+      "model_mode": "live",
+      "model_name": "qwen3.8-flash",
+      "prompt_sha256": "051286bc27083b1f3cd9201ebcd09030830ec3a06401197a0adaa0f1003fcddd",
+      "status": "completed",
+      "result": {
+        "status": "completed",
+        "summary": "基准 2026-07-01 至 2026-08-01，比较 2026-08-01 至 2026-09-01，下降阈值 20%；基准 2026-07-01 至 2026-08-01，比较 2026-08-01 至 2026-09-01，下降阈值 20%；基准 2026-07-01 至 2026-08-01，比较 2026-08-01 至 2026-09-01，下降阈值 20%（均不含结束日）。本轮比较识别到 3 位达到下降阈值的老会员。门店 S03 缺少所选时段数据，未计入判断，不能按零消费处理。",
+        "recommendations": [
+          {
+            "member_id": "M001",
+            "suggestion": "优先安排门店客服做一次一对一回访与品类偏好确认，再按偏好推荐会员专属权益或体验装；建议在触达前先由运营人工核对订单明细中的退款与取消记录。",
+            "rationale": "基准时段 2026-07-01 至 2026-08-01，比较时段 2026-08-01 至 2026-09-01（均不含结束日）。净消费从 1000 元变为 400 元，下降 60%。基准时段有 1 笔已支付订单，支付 1000 元，退款 0 元，净消费 1000 元。比较时段有 2 笔已支付订单（其中 1 笔全额退款，已包含在已支付笔数内），支付 500 元，退款 100 元，净消费 400 元；另有 1 笔取消订单未计入。\n基准时段 2026-07-01 至 2026-08-01，比较时段 2026-08-01 至 2026-09-01（均不含结束日）。净消费从 1000 元变为 400 元，下降 60%。基准时段有 1 笔已支付订单，支付 1000 元，退款 0 元，净消费 1000 元。比较时段有 2 笔已支付订单（其中 1 笔全额退款，已包含在已支付笔数内），支付 500 元，退款 100 元，净消费 400 元；另有 1 笔取消订单未计入。"
+          },
+          {
+            "member_id": "M004",
+            "suggestion": "列入高优先人工回访名单，由 S01 门店客服以老会员关怀方式了解近期需求变化，并提醒可用的常规会员权益；如需形成运营名单，须先走受控确认流程。",
+            "rationale": "基准时段 2026-07-01 至 2026-08-01，比较时段 2026-08-01 至 2026-09-01（均不含结束日）。净消费从 400 元变为 0 元，下降 100%。基准时段有 1 笔已支付订单，支付 400 元，退款 0 元，净消费 400 元。比较时段没有已支付订单，净消费为 0 元。\n基准时段 2026-07-01 至 2026-08-01，比较时段 2026-08-01 至 2026-09-01（均不含结束日）。净消费从 400 元变为 0 元，下降 100%。基准时段有 1 笔已支付订单，支付 400 元，退款 0 元，净消费 400 元。比较时段没有已支付订单，净消费为 0 元。"
+          },
+          {
+            "member_id": "M007",
+            "suggestion": "采用低成本触达方式（如新品或到店活动信息提醒），观察是否恢复互动后再决定是否升级为人工回访；不建议一次性投入高成本权益。",
+            "rationale": "基准时段 2026-07-01 至 2026-08-01，比较时段 2026-08-01 至 2026-09-01（均不含结束日）。净消费从 100 元变为 0 元，下降 100%。基准时段有 1 笔已支付订单，支付 100 元，退款 0 元，净消费 100 元。比较时段没有已支付订单，净消费为 0 元。\n基准时段 2026-07-01 至 2026-08-01，比较时段 2026-08-01 至 2026-09-01（均不含结束日）。净消费从 100 元变为 0 元，下降 100%。基准时段有 1 笔已支付订单，支付 100 元，退款 0 元，净消费 100 元。比较时段没有已支付订单，净消费为 0 元。"
+          }
+        ],
+        "evidence_ids": [
+          "CMP-29dcd590e6429c3a",
+          "CMP-30cd499c230992b1",
+          "CMP-9e4017002e9ab53b"
+        ],
+        "limitations": [
+          "未覆盖门店的消费未知，不能计为零。",
+          "召回建议由模型生成，消费下降原因及具体触达方案仍需业务人员核实。"
+        ]
+      },
+      "observations": [
+        {
+          "name": "compare_spending",
+          "result": {
+            "status": "partial",
+            "evidence_id": "CMP-29dcd590e6429c3a",
+            "dataset_version": "sample-1",
+            "metric_id": "sample.net_spend.v1",
+            "windows": {
+              "baseline": [
+                "2026-07-01",
+                "2026-08-01"
+              ],
+              "current": [
+                "2026-08-01",
+                "2026-09-01"
+              ],
+              "end_exclusive": true
+            },
+            "minimum_decline_pct": 20,
+            "rows": [
+              {
+                "member_id": "M001",
+                "store_id": "S01",
+                "baseline_cents": 100000,
+                "current_cents": 40000,
+                "delta_cents": -60000,
+                "decline_pct": 60.0,
+                "baseline_orders": 1,
+                "current_orders": 2,
+                "declining": true,
+                "evidence_order_ids": [
+                  [
+                    "O0010"
+                  ],
+                  [
+                    "O0011",
+                    "OREF"
+                  ]
+                ],
+                "order_breakdown": {
+                  "baseline": {
+                    "paid_count": 1,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 100000,
+                    "refunded_cents": 0,
+                    "net_cents": 100000,
+                    "paid_order_ids": [
+                      "O0010"
+                    ],
+                    "cancelled_order_ids": []
+                  },
+                  "current": {
+                    "paid_count": 2,
+                    "fully_refunded_count": 1,
+                    "cancelled_count": 1,
+                    "paid_cents": 50000,
+                    "refunded_cents": 10000,
+                    "net_cents": 40000,
+                    "paid_order_ids": [
+                      "O0011",
+                      "OREF"
+                    ],
+                    "cancelled_order_ids": [
+                      "OCANCEL"
+                    ]
+                  }
+                }
+              },
+              {
+                "member_id": "M002",
+                "store_id": "S01",
+                "baseline_cents": 80000,
+                "current_cents": 80000,
+                "delta_cents": 0,
+                "decline_pct": 0.0,
+                "baseline_orders": 1,
+                "current_orders": 1,
+                "declining": false,
+                "evidence_order_ids": [
+                  [
+                    "O0020"
+                  ],
+                  [
+                    "O0021"
+                  ]
+                ],
+                "order_breakdown": {
+                  "baseline": {
+                    "paid_count": 1,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 80000,
+                    "refunded_cents": 0,
+                    "net_cents": 80000,
+                    "paid_order_ids": [
+                      "O0020"
+                    ],
+                    "cancelled_order_ids": []
+                  },
+                  "current": {
+                    "paid_count": 1,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 80000,
+                    "refunded_cents": 0,
+                    "net_cents": 80000,
+                    "paid_order_ids": [
+                      "O0021"
+                    ],
+                    "cancelled_order_ids": []
+                  }
+                }
+              },
+              {
+                "member_id": "M003",
+                "store_id": "S01",
+                "baseline_cents": 50000,
+                "current_cents": 90000,
+                "delta_cents": 40000,
+                "decline_pct": -80.0,
+                "baseline_orders": 1,
+                "current_orders": 1,
+                "declining": false,
+                "evidence_order_ids": [
+                  [
+                    "O0030"
+                  ],
+                  [
+                    "O0031"
+                  ]
+                ],
+                "order_breakdown": {
+                  "baseline": {
+                    "paid_count": 1,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 50000,
+                    "refunded_cents": 0,
+                    "net_cents": 50000,
+                    "paid_order_ids": [
+                      "O0030"
+                    ],
+                    "cancelled_order_ids": []
+                  },
+                  "current": {
+                    "paid_count": 1,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 90000,
+                    "refunded_cents": 0,
+                    "net_cents": 90000,
+                    "paid_order_ids": [
+                      "O0031"
+                    ],
+                    "cancelled_order_ids": []
+                  }
+                }
+              },
+              {
+                "member_id": "M004",
+                "store_id": "S01",
+                "baseline_cents": 40000,
+                "current_cents": 0,
+                "delta_cents": -40000,
+                "decline_pct": 100.0,
+                "baseline_orders": 1,
+                "current_orders": 0,
+                "declining": true,
+                "evidence_order_ids": [
+                  [
+                    "O0040"
+                  ],
+                  []
+                ],
+                "order_breakdown": {
+                  "baseline": {
+                    "paid_count": 1,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 40000,
+                    "refunded_cents": 0,
+                    "net_cents": 40000,
+                    "paid_order_ids": [
+                      "O0040"
+                    ],
+                    "cancelled_order_ids": []
+                  },
+                  "current": {
+                    "paid_count": 0,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 0,
+                    "refunded_cents": 0,
+                    "net_cents": 0,
+                    "paid_order_ids": [],
+                    "cancelled_order_ids": []
+                  }
+                }
+              },
+              {
+                "member_id": "M005",
+                "store_id": "S02",
+                "baseline_cents": 0,
+                "current_cents": 0,
+                "delta_cents": 0,
+                "decline_pct": null,
+                "baseline_orders": 0,
+                "current_orders": 0,
+                "declining": false,
+                "evidence_order_ids": [
+                  [],
+                  []
+                ],
+                "order_breakdown": {
+                  "baseline": {
+                    "paid_count": 0,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 0,
+                    "refunded_cents": 0,
+                    "net_cents": 0,
+                    "paid_order_ids": [],
+                    "cancelled_order_ids": []
+                  },
+                  "current": {
+                    "paid_count": 0,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 0,
+                    "refunded_cents": 0,
+                    "net_cents": 0,
+                    "paid_order_ids": [],
+                    "cancelled_order_ids": []
+                  }
+                }
+              },
+              {
+                "member_id": "M007",
+                "store_id": "S02",
+                "baseline_cents": 10000,
+                "current_cents": 0,
+                "delta_cents": -10000,
+                "decline_pct": 100.0,
+                "baseline_orders": 1,
+                "current_orders": 0,
+                "declining": true,
+                "evidence_order_ids": [
+                  [
+                    "O0070"
+                  ],
+                  []
+                ],
+                "order_breakdown": {
+                  "baseline": {
+                    "paid_count": 1,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 10000,
+                    "refunded_cents": 0,
+                    "net_cents": 10000,
+                    "paid_order_ids": [
+                      "O0070"
+                    ],
+                    "cancelled_order_ids": []
+                  },
+                  "current": {
+                    "paid_count": 0,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 0,
+                    "refunded_cents": 0,
+                    "net_cents": 0,
+                    "paid_order_ids": [],
+                    "cancelled_order_ids": []
+                  }
+                }
+              }
+            ],
+            "declining_members": [
+              "M001",
+              "M004",
+              "M007"
+            ],
+            "missing_coverage_stores": [
+              "S03"
+            ],
+            "limitations": [
+              "未覆盖门店的消费未知，不能计为零。"
+            ],
+            "business_reference_date": "2026-09-01"
+          },
+          "call_id": "call_684fa4c232fe484db50a807f"
+        },
+        {
+          "name": "compare_spending",
+          "result": {
+            "status": "ok",
+            "evidence_id": "CMP-30cd499c230992b1",
+            "dataset_version": "sample-1",
+            "metric_id": "sample.net_spend.v1",
+            "windows": {
+              "baseline": [
+                "2026-07-01",
+                "2026-08-01"
+              ],
+              "current": [
+                "2026-08-01",
+                "2026-09-01"
+              ],
+              "end_exclusive": true
+            },
+            "minimum_decline_pct": 20,
+            "rows": [
+              {
+                "member_id": "M001",
+                "store_id": "S01",
+                "baseline_cents": 100000,
+                "current_cents": 40000,
+                "delta_cents": -60000,
+                "decline_pct": 60.0,
+                "baseline_orders": 1,
+                "current_orders": 2,
+                "declining": true,
+                "evidence_order_ids": [
+                  [
+                    "O0010"
+                  ],
+                  [
+                    "O0011",
+                    "OREF"
+                  ]
+                ],
+                "order_breakdown": {
+                  "baseline": {
+                    "paid_count": 1,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 100000,
+                    "refunded_cents": 0,
+                    "net_cents": 100000,
+                    "paid_order_ids": [
+                      "O0010"
+                    ],
+                    "cancelled_order_ids": []
+                  },
+                  "current": {
+                    "paid_count": 2,
+                    "fully_refunded_count": 1,
+                    "cancelled_count": 1,
+                    "paid_cents": 50000,
+                    "refunded_cents": 10000,
+                    "net_cents": 40000,
+                    "paid_order_ids": [
+                      "O0011",
+                      "OREF"
+                    ],
+                    "cancelled_order_ids": [
+                      "OCANCEL"
+                    ]
+                  }
+                }
+              },
+              {
+                "member_id": "M002",
+                "store_id": "S01",
+                "baseline_cents": 80000,
+                "current_cents": 80000,
+                "delta_cents": 0,
+                "decline_pct": 0.0,
+                "baseline_orders": 1,
+                "current_orders": 1,
+                "declining": false,
+                "evidence_order_ids": [
+                  [
+                    "O0020"
+                  ],
+                  [
+                    "O0021"
+                  ]
+                ],
+                "order_breakdown": {
+                  "baseline": {
+                    "paid_count": 1,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 80000,
+                    "refunded_cents": 0,
+                    "net_cents": 80000,
+                    "paid_order_ids": [
+                      "O0020"
+                    ],
+                    "cancelled_order_ids": []
+                  },
+                  "current": {
+                    "paid_count": 1,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 80000,
+                    "refunded_cents": 0,
+                    "net_cents": 80000,
+                    "paid_order_ids": [
+                      "O0021"
+                    ],
+                    "cancelled_order_ids": []
+                  }
+                }
+              },
+              {
+                "member_id": "M003",
+                "store_id": "S01",
+                "baseline_cents": 50000,
+                "current_cents": 90000,
+                "delta_cents": 40000,
+                "decline_pct": -80.0,
+                "baseline_orders": 1,
+                "current_orders": 1,
+                "declining": false,
+                "evidence_order_ids": [
+                  [
+                    "O0030"
+                  ],
+                  [
+                    "O0031"
+                  ]
+                ],
+                "order_breakdown": {
+                  "baseline": {
+                    "paid_count": 1,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 50000,
+                    "refunded_cents": 0,
+                    "net_cents": 50000,
+                    "paid_order_ids": [
+                      "O0030"
+                    ],
+                    "cancelled_order_ids": []
+                  },
+                  "current": {
+                    "paid_count": 1,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 90000,
+                    "refunded_cents": 0,
+                    "net_cents": 90000,
+                    "paid_order_ids": [
+                      "O0031"
+                    ],
+                    "cancelled_order_ids": []
+                  }
+                }
+              },
+              {
+                "member_id": "M004",
+                "store_id": "S01",
+                "baseline_cents": 40000,
+                "current_cents": 0,
+                "delta_cents": -40000,
+                "decline_pct": 100.0,
+                "baseline_orders": 1,
+                "current_orders": 0,
+                "declining": true,
+                "evidence_order_ids": [
+                  [
+                    "O0040"
+                  ],
+                  []
+                ],
+                "order_breakdown": {
+                  "baseline": {
+                    "paid_count": 1,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 40000,
+                    "refunded_cents": 0,
+                    "net_cents": 40000,
+                    "paid_order_ids": [
+                      "O0040"
+                    ],
+                    "cancelled_order_ids": []
+                  },
+                  "current": {
+                    "paid_count": 0,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 0,
+                    "refunded_cents": 0,
+                    "net_cents": 0,
+                    "paid_order_ids": [],
+                    "cancelled_order_ids": []
+                  }
+                }
+              }
+            ],
+            "declining_members": [
+              "M001",
+              "M004"
+            ],
+            "missing_coverage_stores": [],
+            "limitations": [],
+            "business_reference_date": "2026-09-01"
+          },
+          "call_id": "call_ce04e2531f9347dd8fcd92df"
+        },
+        {
+          "name": "compare_spending",
+          "result": {
+            "status": "ok",
+            "evidence_id": "CMP-9e4017002e9ab53b",
+            "dataset_version": "sample-1",
+            "metric_id": "sample.net_spend.v1",
+            "windows": {
+              "baseline": [
+                "2026-07-01",
+                "2026-08-01"
+              ],
+              "current": [
+                "2026-08-01",
+                "2026-09-01"
+              ],
+              "end_exclusive": true
+            },
+            "minimum_decline_pct": 20,
+            "rows": [
+              {
+                "member_id": "M005",
+                "store_id": "S02",
+                "baseline_cents": 0,
+                "current_cents": 0,
+                "delta_cents": 0,
+                "decline_pct": null,
+                "baseline_orders": 0,
+                "current_orders": 0,
+                "declining": false,
+                "evidence_order_ids": [
+                  [],
+                  []
+                ],
+                "order_breakdown": {
+                  "baseline": {
+                    "paid_count": 0,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 0,
+                    "refunded_cents": 0,
+                    "net_cents": 0,
+                    "paid_order_ids": [],
+                    "cancelled_order_ids": []
+                  },
+                  "current": {
+                    "paid_count": 0,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 0,
+                    "refunded_cents": 0,
+                    "net_cents": 0,
+                    "paid_order_ids": [],
+                    "cancelled_order_ids": []
+                  }
+                }
+              },
+              {
+                "member_id": "M007",
+                "store_id": "S02",
+                "baseline_cents": 10000,
+                "current_cents": 0,
+                "delta_cents": -10000,
+                "decline_pct": 100.0,
+                "baseline_orders": 1,
+                "current_orders": 0,
+                "declining": true,
+                "evidence_order_ids": [
+                  [
+                    "O0070"
+                  ],
+                  []
+                ],
+                "order_breakdown": {
+                  "baseline": {
+                    "paid_count": 1,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 10000,
+                    "refunded_cents": 0,
+                    "net_cents": 10000,
+                    "paid_order_ids": [
+                      "O0070"
+                    ],
+                    "cancelled_order_ids": []
+                  },
+                  "current": {
+                    "paid_count": 0,
+                    "fully_refunded_count": 0,
+                    "cancelled_count": 0,
+                    "paid_cents": 0,
+                    "refunded_cents": 0,
+                    "net_cents": 0,
+                    "paid_order_ids": [],
+                    "cancelled_order_ids": []
+                  }
+                }
+              }
+            ],
+            "declining_members": [
+              "M007"
+            ],
+            "missing_coverage_stores": [],
+            "limitations": [],
+            "business_reference_date": "2026-09-01"
+          },
+          "call_id": "call_3a25a5a27fac44beb1a4a56a"
+        },
+        {
+          "name": "member_history",
+          "result": {
+            "status": "ok",
+            "member": {
+              "member_id": "M001",
+              "store_id": "S01",
+              "joined_at": "2025-01-01"
+            },
+            "orders": [
+              {
+                "order_id": "O0010",
+                "paid_at": "2026-07-10",
+                "paid_cents": 100000,
+                "refunded_cents": 0,
+                "status": "paid"
+              },
+              {
+                "order_id": "O0011",
+                "paid_at": "2026-08-10",
+                "paid_cents": 40000,
+                "refunded_cents": 0,
+                "status": "paid"
+              },
+              {
+                "order_id": "OREF",
+                "paid_at": "2026-08-12",
+                "paid_cents": 10000,
+                "refunded_cents": 10000,
+                "status": "paid"
+              },
+              {
+                "order_id": "OCANCEL",
+                "paid_at": "2026-08-13",
+                "paid_cents": 99900,
+                "refunded_cents": 0,
+                "status": "cancelled"
+              }
+            ]
+          },
+          "call_id": "call_6d37344641944a26907051aa"
+        },
+        {
+          "name": "member_history",
+          "result": {
+            "status": "ok",
+            "member": {
+              "member_id": "M004",
+              "store_id": "S01",
+              "joined_at": "2025-01-01"
+            },
+            "orders": [
+              {
+                "order_id": "O0040",
+                "paid_at": "2026-07-10",
+                "paid_cents": 40000,
+                "refunded_cents": 0,
+                "status": "paid"
+              }
+            ]
+          },
+          "call_id": "call_96af3df2dac844a28934835e"
+        },
+        {
+          "name": "member_history",
+          "result": {
+            "status": "ok",
+            "member": {
+              "member_id": "M007",
+              "store_id": "S02",
+              "joined_at": "2025-01-01"
+            },
+            "orders": [
+              {
+                "order_id": "O0070",
+                "paid_at": "2026-07-10",
+                "paid_cents": 10000,
+                "refunded_cents": 0,
+                "status": "paid"
+              }
+            ]
+          },
+          "call_id": "call_803962c7f16d44d982200148"
+        }
+      ],
+      "steps": 3,
+      "output_repairs": 0,
+      "usage": {
+        "prompt_tokens": 17887,
+        "completion_tokens": 2361,
+        "total_tokens": 20248
+      },
+      "trace_id": "5d74d2f767353833783d9e035375c04f"
     }
   ],
-  "model_calls": 1
+  "model_calls": 5
 }

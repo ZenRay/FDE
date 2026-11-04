@@ -1,7 +1,7 @@
 {
   "contract_version": "w01-0.2.0",
   "product_version": "0.2.0-w1",
-  "checked_at": "2026-11-04T03:36:02.957166+00:00",
+  "checked_at": "2026-11-04T08:09:52.750739+00:00",
   "implementation": "official",
   "runtime": {
     "language": "Python",
@@ -30,11 +30,11 @@
       "code": "VERIFIED"
     },
     "product": {
-      "status": "fail",
+      "status": "pass",
       "code": "LIVE_CASES"
     },
     "model_api": {
-      "status": "fail",
+      "status": "pass",
       "code": "LIVE_MODEL"
     },
     "label_api": {
@@ -42,8 +42,8 @@
       "code": "REAL_HTTP"
     },
     "evaluation": {
-      "status": "skipped",
-      "code": "RUN_PROMPTFOO_SEPARATELY"
+      "status": "pass",
+      "code": "PROMPTFOO_REPORT_VERIFIED"
     }
   }
 }

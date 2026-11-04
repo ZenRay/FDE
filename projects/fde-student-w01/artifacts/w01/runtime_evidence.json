@@ -21,7 +21,7 @@
     },
     {
       "case_id": "missing_coverage",
-      "passed": false,
+      "passed": true,
       "evidence": "artifacts/w01/evidence/missing_coverage.json"
     },
     {
@@ -46,12 +46,12 @@
     },
     {
       "case_id": "date_text",
-      "passed": false,
+      "passed": true,
       "evidence": "artifacts/w01/evidence/date_text.json"
     },
     {
       "case_id": "date_button",
-      "passed": false,
+      "passed": true,
       "evidence": "artifacts/w01/evidence/date_button.json"
     },
     {
@@ -61,18 +61,18 @@
     }
   ],
   "artifact_hashes": {
-    "artifacts/w01/evidence/clarification.json": "859885baf2826db17c4a7c278b9da81c8257e773e6802c503a7989b20c779667",
-    "artifacts/w01/evidence/refund_explanation.json": "1c219988e2466f7ef8fe803757a62b2b0ae270c7af7bf648aab009b334537894",
-    "artifacts/w01/evidence/analysis.json": "1c219988e2466f7ef8fe803757a62b2b0ae270c7af7bf648aab009b334537894",
-    "artifacts/w01/evidence/missing_coverage.json": "6f64a386e6fd90627a94679ac388d3d9399ffa29fc3e13065afc7c4b75788dae",
-    "artifacts/w01/evidence/readonly.json": "1c5feebdd809d4c7da6807b3888cd85689a946297b9bf266f08095f69398e9f5",
-    "artifacts/w01/evidence/http_action.json": "2511f3d2c02feb5b0f6e662500cc20355b58044e1448b3e903c96bccb7920ca6",
-    "artifacts/w01/evidence/idempotency.json": "91c1be3654de647dcc8caea7a41fd060445ece5affe65d1748885fc1169129cc",
-    "artifacts/w01/evidence/undo.json": "06dd22671b2b815f7e16184a06e8eec1245f2a9f8ae5f13c9c456bde39816ce4",
-    "artifacts/w01/evidence/date_text.json": "0bfcfe50fd64ae3becc9c86c90a2df2c58eeee4155011327781c9307da4f1893",
-    "artifacts/w01/evidence/date_button.json": "b6156e2aa21beccd555522f5bf8a6eb4b85f67783448195bec6866ff327eb9c6",
-    "artifacts/w01/evidence/reject_change.json": "9fcb9ed570d335d8557c38b7c1a2dcbd9ccee013229808fd63db814005b16469",
-    "artifacts/w01/evidence/trace.jsonl": "bbf3aec3440ffc2c9d0f6b5f048e9b543291949598ab02148f408e2e99bfc993"
+    "artifacts/w01/evidence/clarification.json": "3606e8d41a574f2927c2752a782f43335f72014b3beceb410509dea0b0bc12bf",
+    "artifacts/w01/evidence/refund_explanation.json": "19be597cd6742fcf8ea2c0925e75a7ff327f09a9990ef28fd717d6b41a2bdda0",
+    "artifacts/w01/evidence/analysis.json": "19be597cd6742fcf8ea2c0925e75a7ff327f09a9990ef28fd717d6b41a2bdda0",
+    "artifacts/w01/evidence/missing_coverage.json": "11c05578b85258e486454fe43480a88fcbe5a823586671d69c3dd9acd60302d7",
+    "artifacts/w01/evidence/readonly.json": "d5073f7320ec00b2fb132ac20ed9ef31f8df2fb671c329a81c12401292d0f021",
+    "artifacts/w01/evidence/http_action.json": "95ef1a6167b6a56cf5215075b8da6f79306f3fe1a0089fd3baf9e6424db91147",
+    "artifacts/w01/evidence/idempotency.json": "3a529e97fe52296fd3d82b13e5ffb8894f814feb6e5a49e556c65556fbda41b0",
+    "artifacts/w01/evidence/undo.json": "2ab99a10ffc856dc20558f58bac78247031d01e2cd7e194d87be417998158d26",
+    "artifacts/w01/evidence/date_text.json": "d35331deffb37590d8ca00d42a05b822032c35f4693b3d198bf617539a049963",
+    "artifacts/w01/evidence/date_button.json": "10abdab176d62a2eeea24d1b311ac31f7a2a2947d8385ac70234587bde2db5cb",
+    "artifacts/w01/evidence/reject_change.json": "2bdd5513f965388c49fbae5d2cdd366d82c31ce79cb56396aa2525e82683d985",
+    "artifacts/w01/evidence/trace.jsonl": "cbc9b8d950ebf918272afea3c309d8c8ae83e73bd9dfc8fc28c653d5374eed40"
   },
   "limits": [
     "Synthetic sample only; Windows and target-learner trial not covered.",

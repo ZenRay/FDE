@@ -1,16 +1,16 @@
 {
   "product_version": "0.2.0-w1",
   "runtime_revision": "w01-runtime-20260922",
-  "session_id": "fef6c926-1169-4073-8190-d99c640df63a",
+  "session_id": "20925c7f-ae90-4380-9c92-a071d151efc5",
   "model_mode": "live",
-  "model_name": "qwen-plus-latest",
+  "model_name": "qwen3.8-flash",
   "prompt_sha256": "051286bc27083b1f3cd9201ebcd09030830ec3a06401197a0adaa0f1003fcddd",
   "status": "rejected",
   "result": {
     "status": "rejected",
     "summary": "已拒绝这份标签草案，未执行本次添加操作。你可以继续提出新的要求。",
     "evidence_ids": [
-      "1e34975a-9cd9-4a3c-8fff-d43f71754b47"
+      "e772a0e2-0296-4b60-af6c-52fc7c90f71c"
     ]
   },
   "observations": [
@@ -19,29 +19,29 @@
       "result": {
         "status": "awaiting_approval",
         "draft": {
-          "id": "1e34975a-9cd9-4a3c-8fff-d43f71754b47",
-          "session": "fef6c926-1169-4073-8190-d99c640df63a",
+          "id": "e772a0e2-0296-4b60-af6c-52fc7c90f71c",
+          "session": "20925c7f-ae90-4380-9c92-a071d151efc5",
           "payload": {
             "member_id": "M004",
             "tag": "recall_review"
           },
-          "hash": "cf63d5680f4960194766afe45536463c9ab2b6d3e2cd12221fa62dc36e447435",
+          "hash": "a272ddb07ed77afe6e20ce119964ba4295a6edc98189eaa72d64e6810201b519",
           "status": "draft",
           "result": null
         }
       },
-      "call_id": "call_a9d414e91fcd464a971945"
+      "call_id": "call_e4b41e35199e45cfbd1e360d"
     },
     {
       "name": "tag_rejection",
       "result": {
-        "id": "1e34975a-9cd9-4a3c-8fff-d43f71754b47",
-        "session": "fef6c926-1169-4073-8190-d99c640df63a",
+        "id": "e772a0e2-0296-4b60-af6c-52fc7c90f71c",
+        "session": "20925c7f-ae90-4380-9c92-a071d151efc5",
         "payload": {
           "member_id": "M004",
           "tag": "recall_review"
         },
-        "hash": "cf63d5680f4960194766afe45536463c9ab2b6d3e2cd12221fa62dc36e447435",
+        "hash": "a272ddb07ed77afe6e20ce119964ba4295a6edc98189eaa72d64e6810201b519",
         "status": "rejected",
         "result": null
       }
@@ -50,11 +50,11 @@
   "steps": 1,
   "output_repairs": 0,
   "usage": {
-    "prompt_tokens": 3407,
-    "completion_tokens": 60,
-    "total_tokens": 3467
+    "prompt_tokens": 3737,
+    "completion_tokens": 342,
+    "total_tokens": 4079
   },
-  "trace_id": "176e80a573346620a22043323db640c4",
+  "trace_id": "f871768ced26ad1ea921b8dfd29c4daa",
   "scenario": "reject_change",
   "scenario_passed": true,
   "checks": {
@@ -70,9 +70,9 @@
     {
       "product_version": "0.2.0-w1",
       "runtime_revision": "w01-runtime-20260922",
-      "session_id": "fef6c926-1169-4073-8190-d99c640df63a",
+      "session_id": "20925c7f-ae90-4380-9c92-a071d151efc5",
       "model_mode": "live",
-      "model_name": "qwen-plus-latest",
+      "model_name": "qwen3.8-flash",
       "prompt_sha256": "051286bc27083b1f3cd9201ebcd09030830ec3a06401197a0adaa0f1003fcddd",
       "status": "awaiting_approval",
       "result": {},
@@ -82,32 +82,32 @@
           "result": {
             "status": "awaiting_approval",
             "draft": {
-              "id": "d5f58507-0b6b-4dd7-ac11-d9ff2e2e1c67",
-              "session": "fef6c926-1169-4073-8190-d99c640df63a",
+              "id": "a4e64011-f36d-4d7c-90e7-48fc8db86dac",
+              "session": "20925c7f-ae90-4380-9c92-a071d151efc5",
               "payload": {
                 "member_id": "M001",
                 "tag": "recall_review"
               },
-              "hash": "6d5a212b95d6526d8da2e175f65b79e1b6c6092eaa8228f622a39f75d730d4b9",
+              "hash": "9d51cb33f99e172dbba9a9e05ca18cbdfde796fd47c7a23f1511d381b4193fc1",
               "status": "draft",
               "result": null
             }
           },
-          "call_id": "call_b3ab39ea720a4583980130"
+          "call_id": "call_f1bc092e817946ab8851d8a1"
         }
       ],
       "steps": 1,
       "output_repairs": 0,
       "usage": {
-        "prompt_tokens": 1543,
-        "completion_tokens": 30,
-        "total_tokens": 1573
+        "prompt_tokens": 1638,
+        "completion_tokens": 170,
+        "total_tokens": 1808
       },
-      "trace_id": "0c1ff9355fa9cbfe8b4429bb193b142c",
+      "trace_id": "c8a8afa6741634c3d260dda4fd9184d1",
       "confirmation": {
         "kind": "tag_confirmation",
-        "draft_id": "d5f58507-0b6b-4dd7-ac11-d9ff2e2e1c67",
-        "draft_hash": "6d5a212b95d6526d8da2e175f65b79e1b6c6092eaa8228f622a39f75d730d4b9",
+        "draft_id": "a4e64011-f36d-4d7c-90e7-48fc8db86dac",
+        "draft_hash": "9d51cb33f99e172dbba9a9e05ca18cbdfde796fd47c7a23f1511d381b4193fc1",
         "payload": {
           "member_id": "M001",
           "tag": "recall_review"
@@ -118,16 +118,16 @@
     {
       "product_version": "0.2.0-w1",
       "runtime_revision": "w01-runtime-20260922",
-      "session_id": "fef6c926-1169-4073-8190-d99c640df63a",
+      "session_id": "20925c7f-ae90-4380-9c92-a071d151efc5",
       "model_mode": "live",
-      "model_name": "qwen-plus-latest",
+      "model_name": "qwen3.8-flash",
       "prompt_sha256": "051286bc27083b1f3cd9201ebcd09030830ec3a06401197a0adaa0f1003fcddd",
       "status": "rejected",
       "result": {
         "status": "rejected",
         "summary": "已拒绝这份标签草案，未执行本次添加操作。你可以继续提出新的要求。",
         "evidence_ids": [
-          "d5f58507-0b6b-4dd7-ac11-d9ff2e2e1c67"
+          "a4e64011-f36d-4d7c-90e7-48fc8db86dac"
         ]
       },
       "observations": [
@@ -136,29 +136,29 @@
           "result": {
             "status": "awaiting_approval",
             "draft": {
-              "id": "d5f58507-0b6b-4dd7-ac11-d9ff2e2e1c67",
-              "session": "fef6c926-1169-4073-8190-d99c640df63a",
+              "id": "a4e64011-f36d-4d7c-90e7-48fc8db86dac",
+              "session": "20925c7f-ae90-4380-9c92-a071d151efc5",
               "payload": {
                 "member_id": "M001",
                 "tag": "recall_review"
               },
-              "hash": "6d5a212b95d6526d8da2e175f65b79e1b6c6092eaa8228f622a39f75d730d4b9",
+              "hash": "9d51cb33f99e172dbba9a9e05ca18cbdfde796fd47c7a23f1511d381b4193fc1",
               "status": "draft",
               "result": null
             }
           },
-          "call_id": "call_b3ab39ea720a4583980130"
+          "call_id": "call_f1bc092e817946ab8851d8a1"
         },
         {
           "name": "tag_rejection",
           "result": {
-            "id": "d5f58507-0b6b-4dd7-ac11-d9ff2e2e1c67",
-            "session": "fef6c926-1169-4073-8190-d99c640df63a",
+            "id": "a4e64011-f36d-4d7c-90e7-48fc8db86dac",
+            "session": "20925c7f-ae90-4380-9c92-a071d151efc5",
             "payload": {
               "member_id": "M001",
               "tag": "recall_review"
             },
-            "hash": "6d5a212b95d6526d8da2e175f65b79e1b6c6092eaa8228f622a39f75d730d4b9",
+            "hash": "9d51cb33f99e172dbba9a9e05ca18cbdfde796fd47c7a23f1511d381b4193fc1",
             "status": "rejected",
             "result": null
           }
@@ -167,18 +167,18 @@
       "steps": 1,
       "output_repairs": 0,
       "usage": {
-        "prompt_tokens": 1543,
-        "completion_tokens": 30,
-        "total_tokens": 1573
+        "prompt_tokens": 1638,
+        "completion_tokens": 170,
+        "total_tokens": 1808
       },
-      "trace_id": "229c908f81c357f01ae5227d43a0afd5"
+      "trace_id": "5ca9b2e4e8b7b15217d19d3655c3101b"
     },
     {
       "product_version": "0.2.0-w1",
       "runtime_revision": "w01-runtime-20260922",
-      "session_id": "fef6c926-1169-4073-8190-d99c640df63a",
+      "session_id": "20925c7f-ae90-4380-9c92-a071d151efc5",
       "model_mode": "live",
-      "model_name": "qwen-plus-latest",
+      "model_name": "qwen3.8-flash",
       "prompt_sha256": "051286bc27083b1f3cd9201ebcd09030830ec3a06401197a0adaa0f1003fcddd",
       "status": "awaiting_approval",
       "result": {},
@@ -188,32 +188,32 @@
           "result": {
             "status": "awaiting_approval",
             "draft": {
-              "id": "1e34975a-9cd9-4a3c-8fff-d43f71754b47",
-              "session": "fef6c926-1169-4073-8190-d99c640df63a",
+              "id": "e772a0e2-0296-4b60-af6c-52fc7c90f71c",
+              "session": "20925c7f-ae90-4380-9c92-a071d151efc5",
               "payload": {
                 "member_id": "M004",
                 "tag": "recall_review"
               },
-              "hash": "cf63d5680f4960194766afe45536463c9ab2b6d3e2cd12221fa62dc36e447435",
+              "hash": "a272ddb07ed77afe6e20ce119964ba4295a6edc98189eaa72d64e6810201b519",
               "status": "draft",
               "result": null
             }
           },
-          "call_id": "call_a9d414e91fcd464a971945"
+          "call_id": "call_e4b41e35199e45cfbd1e360d"
         }
       ],
       "steps": 1,
       "output_repairs": 0,
       "usage": {
-        "prompt_tokens": 1864,
-        "completion_tokens": 30,
-        "total_tokens": 1894
+        "prompt_tokens": 2099,
+        "completion_tokens": 172,
+        "total_tokens": 2271
       },
-      "trace_id": "41de26b567e868f070027d15e1560b96",
+      "trace_id": "5045625859cbb1aaa658629e934126da",
       "confirmation": {
         "kind": "tag_confirmation",
-        "draft_id": "1e34975a-9cd9-4a3c-8fff-d43f71754b47",
-        "draft_hash": "cf63d5680f4960194766afe45536463c9ab2b6d3e2cd12221fa62dc36e447435",
+        "draft_id": "e772a0e2-0296-4b60-af6c-52fc7c90f71c",
+        "draft_hash": "a272ddb07ed77afe6e20ce119964ba4295a6edc98189eaa72d64e6810201b519",
         "payload": {
           "member_id": "M004",
           "tag": "recall_review"
@@ -224,16 +224,16 @@
     {
       "product_version": "0.2.0-w1",
       "runtime_revision": "w01-runtime-20260922",
-      "session_id": "fef6c926-1169-4073-8190-d99c640df63a",
+      "session_id": "20925c7f-ae90-4380-9c92-a071d151efc5",
       "model_mode": "live",
-      "model_name": "qwen-plus-latest",
+      "model_name": "qwen3.8-flash",
       "prompt_sha256": "051286bc27083b1f3cd9201ebcd09030830ec3a06401197a0adaa0f1003fcddd",
       "status": "rejected",
       "result": {
         "status": "rejected",
         "summary": "已拒绝这份标签草案，未执行本次添加操作。你可以继续提出新的要求。",
         "evidence_ids": [
-          "1e34975a-9cd9-4a3c-8fff-d43f71754b47"
+          "e772a0e2-0296-4b60-af6c-52fc7c90f71c"
         ]
       },
       "observations": [
@@ -242,29 +242,29 @@
           "result": {
             "status": "awaiting_approval",
             "draft": {
-              "id": "1e34975a-9cd9-4a3c-8fff-d43f71754b47",
-              "session": "fef6c926-1169-4073-8190-d99c640df63a",
+              "id": "e772a0e2-0296-4b60-af6c-52fc7c90f71c",
+              "session": "20925c7f-ae90-4380-9c92-a071d151efc5",
               "payload": {
                 "member_id": "M004",
                 "tag": "recall_review"
               },
-              "hash": "cf63d5680f4960194766afe45536463c9ab2b6d3e2cd12221fa62dc36e447435",
+              "hash": "a272ddb07ed77afe6e20ce119964ba4295a6edc98189eaa72d64e6810201b519",
               "status": "draft",
               "result": null
             }
           },
-          "call_id": "call_a9d414e91fcd464a971945"
+          "call_id": "call_e4b41e35199e45cfbd1e360d"
         },
         {
           "name": "tag_rejection",
           "result": {
-            "id": "1e34975a-9cd9-4a3c-8fff-d43f71754b47",
-            "session": "fef6c926-1169-4073-8190-d99c640df63a",
+            "id": "e772a0e2-0296-4b60-af6c-52fc7c90f71c",
+            "session": "20925c7f-ae90-4380-9c92-a071d151efc5",
             "payload": {
               "member_id": "M004",
               "tag": "recall_review"
             },
-            "hash": "cf63d5680f4960194766afe45536463c9ab2b6d3e2cd12221fa62dc36e447435",
+            "hash": "a272ddb07ed77afe6e20ce119964ba4295a6edc98189eaa72d64e6810201b519",
             "status": "rejected",
             "result": null
           }
@@ -273,11 +273,11 @@
       "steps": 1,
       "output_repairs": 0,
       "usage": {
-        "prompt_tokens": 1864,
-        "completion_tokens": 30,
-        "total_tokens": 1894
+        "prompt_tokens": 2099,
+        "completion_tokens": 172,
+        "total_tokens": 2271
       },
-      "trace_id": "176e80a573346620a22043323db640c4"
+      "trace_id": "f871768ced26ad1ea921b8dfd29c4daa"
     }
   ],
   "model_calls": 2
